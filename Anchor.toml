@@ -1,0 +1,30 @@
+[toolchain]
+anchor_version = "0.31.1"
+
+[features]
+resolution = true
+skip-lint = false
+
+[programs.devnet]
+reward_pool = "D9WHXtEsXEyQJSQ7HbgrX7dtTWEY4cty6B3wuyWYqJNc"
+
+[programs.mainnet]
+reward_pool = "D9WHXtEsXEyQJSQ7HbgrX7dtTWEY4cty6B3wuyWYqJNc"
+
+[registry]
+url = "https://api.apr.dev"
+
+# Default provider configuration
+[provider]
+cluster = "devnet"
+wallet = "./keys/deployer.json"
+
+# Custom RPC endpoints for each network
+[[clusters.devnet]]
+url = "${SOLANA_DEVNET_RPC_URL}"
+
+[[clusters.mainnet]]
+url = "${SOLANA_MAINNET_RPC_URL}"
+
+[scripts]
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"

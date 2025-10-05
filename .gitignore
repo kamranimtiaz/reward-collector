@@ -1,0 +1,69 @@
+# Whitelist approach - ignore everything by default
+/*
+!/programs/
+!/scripts/
+!/keys/
+
+# Explicitly allow specific files in root
+!/.gitignore
+!/package.json
+!/package-lock.json
+!/Anchor.toml
+!/tsconfig.json
+!/Cargo.toml
+!/Cargo.lock
+!/.env.example
+!/.env.render.example
+!/REAMME.md
+!/RENDER_DEPLOYMENT.md
+
+# Programs - allow all (your smart contract code)
+!/programs/**
+
+# Scripts - only allow collect-rewards-to-vault.ts
+/scripts/*
+!/scripts/collect-rewards-to-vault.ts
+
+# Keys - keep folder but ignore all contents
+/keys/*
+!/keys/.gitkeep
+
+# Standard ignores (these override the whitelist)
+node_modules/
+.DS_Store
+.vscode/
+.local/
+target/
+dist/
+.anchor/
+
+# Environment files (secrets)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.render
+
+# Key files
+*.key
+*.keypair.json
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# Runtime
+*.pid
+*.seed
+*.pid.lock
+
+# Build outputs
+/build/
+
+# Misc
+*.swp
+*.swo
+coverage/
+*.lcov

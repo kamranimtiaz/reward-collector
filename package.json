@@ -1,0 +1,32 @@
+{
+  "name": "reward-pool-solana",
+  "version": "1.0.0",
+  "description": "Solana program for automatic reward distribution to top token holders",
+  "scripts": {
+    "build": "cargo build-sbf",
+    "test": "anchor test",
+    "deploy": "anchor deploy",
+    "bot": "tsx scripts/cron-bot-mock.ts",
+    "withdraw": "tsx scripts/withdraw.ts",
+    "init-pool": "tsx scripts/initialize-pool.ts",
+    "transfer-holders": "tsx scripts/transfer-holders-to-vault.ts",
+    "pump:test": "tsx scripts/pump-test-flow.ts",
+    "vault:fund": "tsx scripts/airdrop-vault.ts",
+    "rewards:collect": "tsx scripts/collect-rewards-to-vault.ts"
+  },
+  "dependencies": {
+    "@coral-xyz/anchor": "^0.31.1",
+    "@pump-fun/pump-sdk": "^1.0.0",
+    "@solana/spl-token": "^0.4.1",
+    "@solana/web3.js": "^1.98.4",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "chai": "^4.3.0",
+    "mocha": "^10.0.0",
+    "ts-mocha": "^10.0.0",
+    "tsx": "^4.11.0",
+    "typescript": "^5.0.0"
+  }
+}
